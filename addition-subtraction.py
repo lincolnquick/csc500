@@ -8,3 +8,8 @@
 user_num1 = int(input("Enter the first number: "))
 user_num2 = int(input("Enter the second number: "))
 
+# Calculate the addition and subtraction of the two numbers
+addition = user_num1 + user_num2
+subtraction = user_num1 - user_num2
+
+
