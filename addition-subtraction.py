@@ -12,4 +12,7 @@ user_num2 = int(input("Enter the second number: "))
 addition = user_num1 + user_num2
 subtraction = user_num1 - user_num2
 
+# Display the results
+print(f"The sum of {user_num1} and {user_num2} is {addition}")
+print(f"The difference of {user_num1} and {user_num2} is {subtraction}")
 
