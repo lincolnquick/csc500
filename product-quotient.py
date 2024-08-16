@@ -10,3 +10,8 @@
 # Ask the user to input two numbers
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
+
+# Calculate the multiplication and division of the two numbers
+product = num1 * num2
+quotient = num1 / num2
+
