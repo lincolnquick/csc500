@@ -21,3 +21,6 @@ sales_tax_amount = meal_subtotal * sales_tax_percent
 # Calculate the total price of the meal (meal subtotal + tip + sales tax)
 total_price = meal_subtotal + tip_amount + sales_tax_amount
 
+# Display the tip amount, sales tax amount, and total price of the meal
+print('Meal Subtotal: ${:.2f}, Tip (18%): ${:.2f}, Tax (7%): ${:.2f}, Total: ${:.2f}'
+      .format(meal_subtotal, tip_amount, sales_tax_amount, total_price))
