@@ -8,4 +8,10 @@
 # the time now (in hours) and then ask for the number of hours to wait for the alarm. 
 # Your program should output what the time will be on a 24-hour clock when the alarm goes off."
 
+# Get the time now (in hours) from the user
+current_time = int(input('Enter the current time (in hours): '))
+
+# Get the number of hours to wait for the alarm from the user
+hours_till_alarm = int(input('Enter the number of hours to wait for the alarm: '))
+
 
