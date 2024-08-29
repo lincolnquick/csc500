@@ -14,4 +14,8 @@ current_time = int(input('Enter the current time (in hours): '))
 # Get the number of hours to wait for the alarm from the user
 hours_till_alarm = int(input('Enter the number of hours to wait for the alarm: '))
 
+# Calculate the time the alarm will go off (current time + hours till alarm)
+alarm_time = (current_time + hours_till_alarm) % 24
 
+# Display the time the alarm will go off
+print('The alarm will go off at {} hours.'.format(alarm_time))
