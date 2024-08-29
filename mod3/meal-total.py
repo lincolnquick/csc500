@@ -10,3 +10,14 @@
 # Get the input for the meal subtotal from the user
 meal_subtotal = float(input('Enter the charge for the food: '))
 
+# Calculate the tip amount (18% of the meal subtotal)
+tip_percent = 0.18
+tip_amount = meal_subtotal * tip_percent
+
+# Calculate the sales tax amount (7% of the meal subtotal)
+sales_tax_percent = 0.07
+sales_tax_amount = meal_subtotal * sales_tax_percent
+
+# Calculate the total price of the meal (meal subtotal + tip + sales tax)
+total_price = meal_subtotal + tip_amount + sales_tax_amount
+
