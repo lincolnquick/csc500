@@ -7,3 +7,6 @@
 # amounts with an 18 percent tip and 7 percent sales tax. 
 # Display each of these amounts and the total price."
 
+# Get the input for the meal subtotal from the user
+meal_subtotal = float(input('Enter the charge for the food: '))
+
