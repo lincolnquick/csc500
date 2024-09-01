@@ -25,4 +25,9 @@ class ItemToPurchase:
         self.item_price = 0.0
         self.item_quantity = 0
 
+    # Method to print the item cost
+    def print_item_cost(self):
+        print('{0} {1} @ ${2} = ${3}'.format(self.item_name, self.item_quantity, self.item_price, self.item_price * self.item_quantity))
+
+    
     
