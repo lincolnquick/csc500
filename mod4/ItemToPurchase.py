@@ -27,7 +27,7 @@ class ItemToPurchase:
 
     # Method to print the item cost
     def print_item_cost(self):
-        print('{0} {1} @ ${2} = ${3}'.format(self.item_name, self.item_quantity, self.item_price, self.item_price * self.item_quantity))
+        print('{} {} @ ${:.2f} = ${:.2f}'.format(self.item_name, self.item_quantity, self.item_price, self.item_price * self.item_quantity))
 
     # Getters and setters
     def set_item_name(self, item_name):
