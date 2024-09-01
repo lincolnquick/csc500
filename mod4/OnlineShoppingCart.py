@@ -4,9 +4,19 @@
 
 from ItemToPurchase import ItemToPurchase
 
-# create a list to hold all items in the shopping cart
+# Create a list to hold all items in the shopping cart
 items = []
 
+def main():
+    # Prompt the user to add 2 items to the shopping cart
+    for i in range(2):
+        items.append(prompt_user_for_item())
+
+    # Print each item in the shopping cart and the total cost of all items
+    show_items_and_total_cost(items)
+
+
+# Prompt the user for items to add to the shopping cart
 def prompt_user_for_item():
     item = ItemToPurchase()
     item.set_item_name(input('Enter the item name:\n'))
@@ -14,6 +24,7 @@ def prompt_user_for_item():
     item.set_item_quantity(int(input('Enter the item quantity:\n')))
     return item
 
+# Print each item in the shopping cart and the total cost of all items
 def show_items_and_total_cost(items):
     total_cost = 0
     for item in items:
