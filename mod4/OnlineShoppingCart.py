@@ -17,11 +17,14 @@ def prompt_user_for_item():
 
 # Print each item in the shopping cart and the total cost of all items
 def show_items_and_total_cost(items):
+    # Begin with newline to separate the items from the prompt
+    print()
     total_cost = 0
     for item in items:
         item.print_item_cost()
         total_cost += item.get_item_price() * item.get_item_quantity()
     print('Total: ${:.2f}'.format(total_cost))
+
 
 # Prompt the user to add 2 items to the shopping cart
 for i in range(2):
