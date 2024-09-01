@@ -29,5 +29,22 @@ class ItemToPurchase:
     def print_item_cost(self):
         print('{0} {1} @ ${2} = ${3}'.format(self.item_name, self.item_quantity, self.item_price, self.item_price * self.item_quantity))
 
+    # Getters and setters
+    def set_item_name(self, item_name):
+        self.item_name = item_name
     
+    def get_item_name(self):
+        return self.item_name
+    
+    def set_item_price(self, item_price):
+        self.item_price = item_price
+
+    def get_item_price(self):
+        return self.item_price
+    
+    def set_item_quantity(self, item_quantity):
+        self.item_quantity = item_quantity
+
+    def get_item_quantity(self):
+        return self.item_quantity
     
