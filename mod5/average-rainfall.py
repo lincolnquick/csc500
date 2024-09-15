@@ -23,3 +23,11 @@ for year in range(1, years + 1):
         rainfall = float(input(f"Enter the inches of rainfall for year {year}, month {month}: "))
         total_rainfall += rainfall
 
+# Calculate the average rainfall
+average_rainfall = total_rainfall / total_months
+
+# Display the results
+print("\nResults:")
+print(f"Number of months: {total_months}")
+print(f"Total inches of rainfall: {total_rainfall}")
+print(f"Average rainfall per month: {average_rainfall}")
