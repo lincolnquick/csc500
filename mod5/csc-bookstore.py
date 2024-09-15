@@ -28,4 +28,7 @@ else:
     points = 60 # If a customer purchases 8 or more books, they earn 60 points
 
 # Display the number of points awarded
-print(f"\nNumber of points awarded: {points} for purchasing {books} books this month.")
+if books == 1:
+    print(f"\nNumber of points awarded: {points} for purchasing {books} book this month.")
+else:
+    print(f"\nNumber of points awarded: {points} for purchasing {books} books this month.")
