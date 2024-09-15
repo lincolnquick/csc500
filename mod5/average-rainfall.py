@@ -15,3 +15,11 @@ years = int(input("Enter the number of years: "))
 total_rainfall = 0
 total_months = years * 12
 
+# Loop through each year
+for year in range(1, years + 1):
+    # Loop through each month
+    for month in range(1, 13):
+        # Get the rainfall for the month
+        rainfall = float(input(f"Enter the inches of rainfall for year {year}, month {month}: "))
+        total_rainfall += rainfall
+
