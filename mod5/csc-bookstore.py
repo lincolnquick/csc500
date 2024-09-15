@@ -14,7 +14,8 @@
 # Get the number of books purchased
 books = int(input("Enter the number of books purchased this month: "))
 
-# Determine the number of points awarded
+# Determine the number of points awarded;
+# made assumptions about the number of books purchased for odd number of books
 if books <= 1:
     points = 0  # If a customer purchases 0-1 books, they earn 0 points
 elif books <= 3:
@@ -25,3 +26,6 @@ elif books <= 7:
     points = 30  # If a customer purchases 6-7 books, they earn 30 points
 else:
     points = 60 # If a customer purchases 8 or more books, they earn 60 points
+
+# Display the number of points awarded
+print(f"\nNumber of points awarded: {points} for purchasing {books} books this month.")
