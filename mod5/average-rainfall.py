@@ -31,3 +31,4 @@ print("\nResults:")
 print(f"Number of months: {total_months}")
 print(f"Total inches of rainfall: {total_rainfall}")
 print(f"Average rainfall per month: {average_rainfall}")
+

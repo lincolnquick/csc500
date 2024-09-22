@@ -38,7 +38,8 @@
 #Powerbeats 2 Headphones: Bluetooth headphones
 
 from ItemToPurchase import ItemToPurchase
-from OnlineShoppingCart import OnlineShoppingCart
+from ShoppingCart import ShoppingCart
+import datetime
 
 # Print the menu
 def print_menu(cart):
@@ -58,11 +59,12 @@ def print_menu(cart):
             itemNameToRemove = prompt_user_for_item_name()
             cart.remove_item(itemNameToRemove)
         elif choice == 'c':
-            cart.change_item_quantity()
+            # Prompt the user for the item name and quantity
+            print("CHANGE ITEM QUANTITY")
         elif choice == 'i':
-            cart.output_items_descriptions()
+            cart.print_descriptions()
         elif choice == 'o':
-            cart.output_shopping_cart()
+            cart.print_total()
         elif choice == 'q':
             break
         else:
@@ -72,19 +74,27 @@ def print_menu(cart):
 # Main function
 def main():
     # Create a shopping cart
-    cart = OnlineShoppingCart()
+    customer_name = input("Enter your name: ")
+    # Get the current date, formatted to Month Day, Year
+    date = datetime.date.today().strftime("%B %d, %Y")
+
+    cart = ShoppingCart(customer_name, date)
     print_menu(cart)
 
 # Define build_item() function
 def build_item():
-    item = ItemToPurchase()
-    item.set_item_name(input('Enter the item name: '))
-    item.set_item_price(float(input('Enter the item price: ')))
-    item.set_item_quantity(int(input('Enter the item quantity: ')))
-    item.set_item_description(input('Enter the item description: '))
+    
+    item_name = input('Enter the item name: ')
+    item_price = float(input('Enter the item price: '))
+    item_quantity = int(input('Enter the item quantity: '))
+    item_description = input('Enter the item description: ')
+    item = ItemToPurchase(item_name, item_price, item_quantity, item_description)
     return item
 
 # Define prompt_user_for_item_name() function
 def prompt_user_for_item_name():
     item_name = input('Enter the item name: ')
     return item_name
+
+if __name__ == "__main__":
+    main()
