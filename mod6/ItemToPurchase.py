@@ -1,5 +1,5 @@
 # Lincoln Quick
-# CSC 500, Module 4, Portfolio Milestone
+# CSC 500, Module 6, Portfolio Milestone
 # 2024-09-01
 
 # "Online Shopping Cart
@@ -24,6 +24,14 @@ class ItemToPurchase:
         self.item_name = 'none'
         self.item_price = 0.0
         self.item_quantity = 0
+        self.item_description = 'none'
+
+    # Parameterized constructor
+    def __init__(self, item_name, item_price, item_quantity, item_description):
+        self.item_name = item_name
+        self.item_price = item_price
+        self.item_quantity = item_quantity
+        self.item_description = item_description
 
     # Method to print the item cost
     def print_item_cost(self):
@@ -47,4 +55,10 @@ class ItemToPurchase:
 
     def get_item_quantity(self):
         return self.item_quantity
+    
+    def set_item_description(self, item_description):
+        self.item_description = item_description
+
+    def get_item_description(self):
+        return self.item_description
     
