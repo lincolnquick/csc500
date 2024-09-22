@@ -130,3 +130,25 @@ class ShoppingCart:
                 return
         print("Item not found in cart. Nothing modified.")
 
+    # Method to get the number of items in the cart
+    def get_num_items_in_cart(self):
+        num_items = 0
+        for item in self.cart_items:
+            num_items += item.get_item_quantity()
+        return num_items
+    
+    # Method to get the total cost of the items in the cart
+    def get_cost_of_cart(self):
+        total_cost = 0
+        for item in self.cart_items:
+            total_cost += item.get_item_price() * item.get_item_quantity()
+        return total_cost
+    
+    # Method to print the total cost of the items in the cart
+    def print_total(self):
+        print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
+        print(f"Number of Items: {self.get_num_items_in_cart()}")
+        for item in self.cart_items:
+            item.print_item_cost()
+        total_cost = self.get_cost_of_cart()
+        print(f"Total: ${total_cost}")
