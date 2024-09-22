@@ -29,6 +29,6 @@ else:
 
 # Display the number of points awarded
 if books == 1:
-    print(f"\nNumber of points awarded: {points} for purchasing {books} book this month.")
+    print(f"\nNumber of points awarded: {points} for purchasing 1 book this month.")
 else:
     print(f"\nNumber of points awarded: {points} for purchasing {books} books this month.")
