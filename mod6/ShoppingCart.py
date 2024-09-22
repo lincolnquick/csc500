@@ -1,6 +1,8 @@
 # Lincoln Quick
 # CSC 500: Module 6 Portfolio Milestone
-# 2024-09-22
+# 2024-09-01
+# Modified 2024-09-22
+
 # "Online Shopping Cart
 # Step 4: Build the ShoppingCart class with the following data attributes and related methods. 
 # Note: Some can be method stubs (empty methods) initially, to be completed in later steps
@@ -38,39 +40,6 @@
 #Total: $521
 
 #Example of print_descriptions() output:
-#John Doe's Shopping Cart - February 1, 2020
-#Item Descriptions
-#Nike Romaleos: Volt color, Weightlifting shoes
-#Chocolate Chips: Semi-sweet
-#Powerbeats 2 Headphones: Bluetooth headphones
-
-#Step 5: In the main section of your code, implement the print_menu() function. print_menu() has a ShoppingCart parameter and outputs a menu of options to manipulate the shopping cart. Each option is represented by a single character. Build and output the menu within the function.
-
-#If an invalid character is entered, continue to prompt for a valid choice. Hint: Implement Quit before implementing other options. Call print_menu() in the main() function. Continue to execute the menu until the user enters q to Quit.
-
-#Example:
-#MENU
-#a - Add item to cart
-#r - Remove item from cart
-#c - Change item quantity
-#i - Output items' descriptions
-#o - Output shopping cart
-#q - Quit
-#Choose an option:
-
-#Step 6: Implement Output shopping cart menu option. Implement Output item's description menu option.
-
-#Example of shopping cart menu option:
-#OUTPUT SHOPPING CART
-#John Doe's Shopping Cart - February 1, 2020
-#Number of Items: 8
-#Nike Romaleos 2 @ $189 = $378
-#Chocolate Chips 5 @ $3 = $15
-#Powerbeats 2 Headphones 1 @ $128 = $128
-#Total: $521
-
-#Example of item description menu option.
-#OUTPUT ITEMS' DESCRIPTIONS
 #John Doe's Shopping Cart - February 1, 2020
 #Item Descriptions
 #Nike Romaleos: Volt color, Weightlifting shoes
@@ -144,6 +113,13 @@ class ShoppingCart:
             total_cost += item.get_item_price() * item.get_item_quantity()
         return total_cost
     
+    # Method to print the descriptions of the items in the cart
+    def print_descriptions(self):
+        print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
+        print("Item Descriptions")
+        for item in self.cart_items:
+            print(f"{item.get_item_name()}: {item.get_item_description()}")
+    
     # Method to print the total cost of the items in the cart
     def print_total(self):
         print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
@@ -155,3 +131,9 @@ class ShoppingCart:
             item.print_item_cost()
         total_cost = self.get_cost_of_cart()
         print(f"Total: ${total_cost}")
+
+
+
+
+
+    

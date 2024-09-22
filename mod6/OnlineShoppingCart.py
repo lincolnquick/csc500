@@ -1,6 +1,7 @@
 # Lincoln Quick
 # CSC 500, Module 6, Portfolio Milestone
-# 2024-09-22
+# 2024-09-01
+# Modified 2024-09-22
 #
 #Step 5: In the main section of your code, implement the print_menu() function. 
 # print_menu() has a ShoppingCart parameter and outputs a menu of options to manipulate the shopping cart. 
@@ -53,22 +54,25 @@ def print_menu(cart):
     choice = input("Choose an option: ")
     while choice != 'q':
         if choice == 'a':
+            print("\nADD ITEM TO CART")
             itemToAdd = build_item()
             cart.add_item(itemToAdd)
         elif choice == 'r':
+            print("\nREMOVE ITEM FROM CART")
             itemNameToRemove = prompt_user_for_item_name()
             cart.remove_item(itemNameToRemove)
         elif choice == 'c':
             # Prompt the user for the item name and quantity
-            print("CHANGE ITEM QUANTITY")
+            print("\nCHANGE ITEM QUANTITY")
+            # TODO
         elif choice == 'i':
+            print("\nOUTPUT ITEMS' DESCRIPTIONS")
             cart.print_descriptions()
         elif choice == 'o':
+            print("\nOUTPUT SHOPPING CART")
             cart.print_total()
-        elif choice == 'q':
-            break
         else:
-            print("Invalid choice. Please try again.")
+            print("\nInvalid choice. Please try again.")
         choice = input("Choose an option: ")
 
 # Main function
