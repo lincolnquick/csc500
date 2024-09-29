@@ -52,8 +52,16 @@ course_time = {
     "COM241": "1:00 p.m."
 }
 
-# Let the user enter a course number and then display the course's room number, instructor, and meeting time.
-course_number = input("Enter a course number: ")
+# Continuously prompt the user to enter a course number until the user enters a valid course number.
+while True:
+    course_number = input("Enter a course number: ")
+
+    # Check if the course number is in the course_room dictionary.
+    if course_number in course_room:
+        break
+    else:
+        print("Course number not found.")
+
 
 # Display the course's room number, instructor, and meeting time.
 print("Room Number:", course_room[course_number])
