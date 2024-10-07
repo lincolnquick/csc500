@@ -173,7 +173,6 @@ def change_item_quantity(cart):
             itemToChange = item
             break
         if itemToChange == None:
-            print("Item not found in cart. Nothing modified.")
             # Break from function and print menu
             return None
     # Remove the old item from the cart

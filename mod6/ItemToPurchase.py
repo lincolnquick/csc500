@@ -1,7 +1,7 @@
 # Lincoln Quick
-# CSC 500, Module 6, Portfolio Milestone
+# CSC 500, Module 8, Portfolio Milestone
 # 2024-09-01
-# Mofified 2024-09-22
+# Mofified 2024-10-06
 
 # "Online Shopping Cart
 
