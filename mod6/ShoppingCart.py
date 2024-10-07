@@ -1,7 +1,7 @@
 # Lincoln Quick
 # CSC 500: Module 6 Portfolio Milestone
 # 2024-09-01
-# Modified 2024-09-22
+# Modified 2024-10-06
 
 # "Online Shopping Cart
 # Step 4: Build the ShoppingCart class with the following data attributes and related methods. 
@@ -79,6 +79,7 @@ class ShoppingCart:
     # Method to add an item to the cart
     def add_item(self, ItemToPurchase):
         self.cart_items.append(ItemToPurchase)
+        print("Item added to cart.")
 
     # Method to remove an item from the cart
     def remove_item(self, item_name):

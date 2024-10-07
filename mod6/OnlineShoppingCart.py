@@ -1,7 +1,7 @@
 # Lincoln Quick
-# CSC 500, Module 6, Portfolio Milestone
+# CSC 500, Module 8, Portfolio Milestone
 # 2024-09-01
-# Modified 2024-09-22
+# Modified 2024-10-06
 #
 #Step 5: In the main section of your code, implement the print_menu() function. 
 # print_menu() has a ShoppingCart parameter and outputs a menu of options to manipulate the shopping cart. 
@@ -38,12 +38,56 @@
 #Chocolate Chips: Semi-sweet
 #Powerbeats 2 Headphones: Bluetooth headphones
 
+# Step 7:
+# In the main section of your code, prompt the user for a customer's name and today's date. 
+# Output the name and date. Create an object of type ShoppingCart.
+
+# Example:
+# Enter customer's name:
+# John Doe
+# Enter today's date:
+# February 1, 2020
+# Customer name: John Doe
+# Today's date: February 1, 2020
+
+# Step 8:
+# Implement Add item to cart menu option.
+
+# Example:
+# ADD ITEM TO CART
+# Enter the item name:
+# Nike Romaleos
+# Enter the item description:
+# Volt color, Weightlifting shoes
+# Enter the item price:
+# 189
+# Enter the item quantity:
+# 2
+
+# Step 9:
+# Implement remove item menu option.
+
+# Example:
+# REMOVE ITEM FROM CART
+# Enter name of item to remove:
+# Chocolate Chips
+
+# Step 10:
+# Implement Change item quantity menu option. Hint: Make new ItemToPurchase object before using ModifyItem() method.
+
+# Example:
+# CHANGE ITEM QUANTITY
+# Enter the item name:
+# Nike Romaleos
+# Enter the new quantity:
+# 3
+
 from ItemToPurchase import ItemToPurchase
 from ShoppingCart import ShoppingCart
 import datetime
 
-# Print the menu
-def print_menu(cart):
+# Print the menu text
+def print_menu_text():
     print("\nMENU")
     print("a - Add item to cart")
     print("r - Remove item from cart")
@@ -51,20 +95,31 @@ def print_menu(cart):
     print("i - Output items' descriptions")
     print("o - Output shopping cart")
     print("q - Quit")
+
+# Print the menu
+def print_menu(cart):
+    print_menu_text()
     choice = input("Choose an option: ")
     while choice != 'q':
         if choice == 'a':
             print("\nADD ITEM TO CART")
             itemToAdd = build_item()
             cart.add_item(itemToAdd)
+            
         elif choice == 'r':
             print("\nREMOVE ITEM FROM CART")
             itemNameToRemove = prompt_user_for_item_name()
             cart.remove_item(itemNameToRemove)
+            
         elif choice == 'c':
             # Prompt the user for the item name and quantity
             print("\nCHANGE ITEM QUANTITY")
-            # TODO
+            itemChanged = change_item_quantity(cart)
+            if itemChanged == None:
+                print("Item not found in cart. Nothing modified.")
+                continue
+            else:
+                print("Item quantity changed.")
         elif choice == 'i':
             print("\nOUTPUT ITEMS' DESCRIPTIONS")
             cart.print_descriptions()
@@ -73,14 +128,20 @@ def print_menu(cart):
             cart.print_total()
         else:
             print("\nInvalid choice. Please try again.")
+        print_menu_text()
         choice = input("Choose an option: ")
 
 # Main function
 def main():
     # Create a shopping cart
     customer_name = input("Enter your name: ")
-    # Get the current date, formatted to Month Day, Year
-    date = datetime.date.today().strftime("%B %d, %Y")
+
+    # Prompt the user to enter today's date
+    date = input("Enter today's date: ")
+
+    # Output customer's name and today's date on two lines
+    print(f"Customer name: {customer_name}")
+    print(f"Today's date: {date}")
 
     cart = ShoppingCart(customer_name, date)
     print_menu(cart)
@@ -99,6 +160,34 @@ def build_item():
 def prompt_user_for_item_name():
     item_name = input('Enter the item name: ')
     return item_name
+
+# Change item quantity function
+def change_item_quantity(cart):
+    
+    itemNameToChange = prompt_user_for_item_name()
+    newQuantity = int(input('Enter the new quantity: '))
+    # Check if the item is in the cart
+    itemToChange = None
+    for item in cart.cart_items:
+        if item.get_item_name() == itemNameToChange:
+            itemToChange = item
+            break
+        if itemToChange == None:
+            print("Item not found in cart. Nothing modified.")
+            # Break from function and print menu
+            return None
+    # Remove the old item from the cart
+    cart.remove_item(itemNameToChange)
+
+    # Create a new ItemToPurchase object with the new quantity
+    itemPrice = itemToChange.get_item_price()
+    itemDescription = itemToChange.get_item_description()
+    itemToChange = ItemToPurchase(itemNameToChange, itemPrice, newQuantity, itemDescription)
+
+    # Add the new item to the cart
+    cart.add_item(itemToChange)
+
+    return itemToChange
 
 if __name__ == "__main__":
     main()
